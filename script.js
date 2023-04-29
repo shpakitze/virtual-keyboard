@@ -1,52 +1,56 @@
-const Keyboard = {
-  enKeyLayout: [
+class Keyboard {
+  enKeyLayout = [
     '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace', 'br',
     'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'del', 'br',
     'caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', 'enter', 'br',
     'Lshift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'up', 'Rshift', 'br',
     'Lctrl', 'win', 'alt', 'space', 'alt', 'left', 'down', 'right', 'Rctrl',
-  ],
-  ruKeyLayout: [
+  ];
+
+  ruKeyLayout = [
     'ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace', 'br',
     'tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'del', 'br',
     'caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'enter', 'br',
     'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'up', 'Rshift', 'br',
     'Lctrl', 'win', 'alt', 'space', 'alt', 'left', 'down', 'right', 'Rctrl',
-  ],
-  enShiftLayout: [
+  ];
+
+  enShiftLayout = [
     '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', 'backspace', 'br',
     'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}', 'del', 'br',
     'caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', '"', 'enter', 'br',
     'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', 'up', 'Rshift', 'br',
     'Lctrl', 'win', 'alt', 'space', 'alt', 'left', 'down', 'right', 'Rctrl',
-  ],
+  ];
 
-  ruShiftLayout: [
+  ruShiftLayout = [
     'ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '-', '=', 'backspace', 'br',
     'tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'del', 'br',
     'caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'enter', 'br',
     'done', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', ',', 'up', 'Rshift', 'br',
     'Lctrl', 'win', 'alt', 'space', 'alt', 'left', 'down', 'right', 'Rctrl',
-  ],
-  elements: {
+  ];
+
+  elements = {
     main: null,
     keysContainer: null,
     keys: [],
     textInput: null,
-  },
+  };
 
-  eventHandlers: {
+  eventHandlers = {
     onInput: null,
     onClose: null,
-  },
+  };
 
-  properties: {
+  properties = {
     value: '',
     capsLock: false,
     currentKeyLayout: false,
     shift: false,
     sound: true,
-  },
+  };
+
   init() {
     // Create main elements
     this.elements.textInput = document.createElement('textarea');
@@ -64,7 +68,8 @@ const Keyboard = {
     // Add to DOM
     this.elements.main.appendChild(this.elements.keysContainer);
     document.body.appendChild(this.elements.main);
-  },
+  }
+
   createKeys() {
     const fragment = document.createDocumentFragment();
     const keyLayout = this.currentKeyLayout ? this.enKeyLayout : this.ruKeyLayout;
@@ -196,8 +201,8 @@ const Keyboard = {
     });
 
     return fragment;
-  },
-};
+  }
+}
 
 window.addEventListener('DOMContentLoaded', () => {
   Keyboard.init();
