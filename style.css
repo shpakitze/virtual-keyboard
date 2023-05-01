@@ -19,12 +19,16 @@
   transition: bottom 0.4s;
 }
 .keyboard__keys {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+
 }
 .keyboard__key {
-  height: 45px;
-  width: 45px;
-  max-width: 90px;
+  height: 35px;
+  width: 35px;
   margin: 3px;
   border-radius: 4px;
   border: none;
@@ -54,4 +58,40 @@
 .active {
   border-radius: 50px;
   color: red;
+}
+.key__row {
+  display: flex;
+  justify-content: space-between;
+width: 700px;
+}
+
+.Backspace, 
+.CapsLock,
+.Enter,
+.Tab,
+.ShiftLeft,
+.ShiftRight,
+.ControlLeft,
+.ControlRight,
+.Space,
+.MetaLeft,
+.AltLeft,
+.AltRight,
+.ArrowLeft,
+.ArrowDown,
+.ArrowUp,
+.ArrowRight
+{
+  background: rgba(212, 157, 6, 0.603)
+}
+.Backspace, 
+.CapsLock,
+.Enter,
+.Tab,
+.ShiftLeft,
+.ShiftRight {
+  width: 80px;
+}
+.Space {
+  width: 325px;
 }

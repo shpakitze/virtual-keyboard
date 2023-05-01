@@ -59,7 +59,7 @@ const ShiftRight = { sys: true, name: 'ShiftRight',  Enkey: 'Shift', sEnKey: 'Sh
 const ArrowUp = { sys: false, name: 'ArrowUp',  Enkey: '▲', sEnKey: '▲', Rukey: '▲', sRuKey: '▲' };
 
 const  ControlLeft = { sys: true, name: 'ControlLeft',  Enkey: 'Ctrl', sEnKey: 'Ctrl', Rukey: 'Ctrl', sRuKey: 'Ctrl' };
-const  MetaLeft = { sys: true, name: 'MetaLeft',  Enkey: 'MetaLeft', sEnKey: 'MetaLeft', Rukey: 'MetaLeft', sRuKey: 'MetaLeft' };
+const  MetaLeft = { sys: true, name: 'MetaLeft',  Enkey: 'Win', sEnKey: 'Win', Rukey: 'Win', sRuKey: 'Win' };
 const  AltLeft = { sys: true, name: 'AltLeft',  Enkey: 'Alt', sEnKey: 'Alt', Rukey: 'Alt', sRuKey: 'Alt' };
 const  Space = { sys: false, name: 'Space',  Enkey: ' ', sEnKey: ' ', Rukey: ' ', sRuKey: ' ' };
 const  AltRight = { sys: true, name: 'AltRight',  Enkey: 'Alt', sEnKey: 'Alt', Rukey: 'Alt', sRuKey: 'Alt' };

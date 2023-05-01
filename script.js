@@ -13,11 +13,6 @@ class Keyboard {
     keys: [],
   };
 
-  eventHandlers = {
-    onInput: null,
-    onClose: null,
-  };
-
   properties = {
     value: '',
     capsLock: false,
@@ -95,7 +90,6 @@ class Keyboard {
       default:
         if (!key.sys) {
           const a = document.querySelector(`.${code}`);
-          console.log(key);
           this.updateValue(a.innerHTML);
         }
         break;
@@ -105,6 +99,7 @@ class Keyboard {
   createKeys() {
     this.keys.forEach((el) => {
       const row = document.createElement('div');
+      row.classList.add('key__row');
       this.elements.keysContainer.appendChild(row);
       el.forEach((key) => {
         const keyElement = document.createElement('button');
