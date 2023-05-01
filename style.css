@@ -95,3 +95,7 @@ width: 700px;
 .Space {
   width: 325px;
 }
+.description {
+  margin: 10px auto;
+  text-align: center;
+}

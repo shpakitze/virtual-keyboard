@@ -21,10 +21,19 @@ class Keyboard {
   };
 
   init() {
+    if (localStorage.getItem('layout') !== null) { this.properties.currentKeyLayout = localStorage.getItem('layout'); }
     // Create main elements
     this.elements.textInput = document.createElement('textarea');
     this.elements.textInput.classList.add('keyboard-input');
     document.body.appendChild(this.elements.textInput);
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    p1.classList.add('description');
+    p2.classList.add('description');
+    p1.textContent = 'Клавиатура создана в операционной системе Windows';
+    p2.textContent = 'Для переключения языка комбинация: левыe LeftCtrl + LeftShift';
+    document.body.appendChild(p1);
+    document.body.appendChild(p2);
     this.elements.main = document.createElement('div');
     this.elements.keysContainer = document.createElement('div');
     // Setup main elements
@@ -41,6 +50,7 @@ class Keyboard {
         const a = document.querySelector(`.${e.code}`);
         if ((e.code === 'ControlLeft' && e.shiftKey) || (e.code === 'ShiftLeft' && e.ctrlKey)) {
           this.properties.currentKeyLayout = this.properties.currentKeyLayout === 'Enkey' ? 'Rukey' : 'Enkey';
+          localStorage.setItem('layout', this.properties.currentKeyLayout);
           this.updateLayout();
         }
         this.keydown(e.code, keyboardKey[1]);
